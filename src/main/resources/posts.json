@@ -2,12 +2,12 @@
   {
     "id": 1,
     "content": "Java",
-    "created": "Aug 22, 2023, 2:31:36 PM",
-    "updated": "Aug 22, 2023, 2:31:36 PM",
+    "created": "Aug 23, 2023, 2:15:04 PM",
+    "updated": "Aug 23, 2023, 2:15:04 PM",
     "labels": [
       {
         "id": 1,
-        "name": "Kikp",
+        "name": "Koka",
         "labelStatus": "ACTIVE"
       }
     ],
@@ -16,25 +16,23 @@
   {
     "id": 2,
     "content": "Python",
-    "created": "Aug 22, 2023, 2:31:45 PM",
-    "updated": "Aug 22, 2023, 2:31:45 PM",
+    "created": "Aug 23, 2023, 2:15:13 PM",
+    "updated": "Aug 23, 2023, 2:15:13 PM",
     "labels": [],
     "postStatus": "ACTIVE"
   },
   {
     "id": 3,
-    "content": "Java",
-    "created": "Aug 22, 2023, 3:30:15 PM",
-    "updated": "Aug 22, 2023, 3:30:15 PM",
-    "labels": [],
-    "postStatus": "DELETED"
-  },
-  {
-    "id": 4,
-    "content": "Python",
-    "created": "Aug 22, 2023, 3:30:25 PM",
-    "updated": "Aug 22, 2023, 3:30:25 PM",
-    "labels": [],
+    "content": "C++",
+    "created": "Aug 23, 2023, 2:19:25 PM",
+    "updated": "Aug 23, 2023, 2:19:25 PM",
+    "labels": [
+      {
+        "id": 2,
+        "name": "GGG",
+        "labelStatus": "ACTIVE"
+      }
+    ],
     "postStatus": "ACTIVE"
   }
 ]

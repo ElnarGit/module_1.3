@@ -1,1 +1,12 @@
-[{"id":1,"name":"Kikp","labelStatus":"ACTIVE"}]
+[
+  {
+    "id": 1,
+    "name": "Koka",
+    "labelStatus": "ACTIVE"
+  },
+  {
+    "id": 2,
+    "name": "GGG",
+    "labelStatus": "ACTIVE"
+  }
+]

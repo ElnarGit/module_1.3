@@ -81,26 +81,24 @@ public class GsonPostRepositoryImpl implements PostRepository {
     @Override
     public Post update(Post updatePost) {
         List<Post> currentPosts = loadPosts();
-        List<Post> updatePosts = new ArrayList<>();
+        List<Post> updatePosts = currentPosts.stream()
+                .map(existingPost -> {
+                    if (existingPost.getId().equals(updatePost.getId())) {
+                        existingPost.setContent(updatePost.getContent());
+                        existingPost.setUpdated(updatePost.getUpdated());
+                        existingPost.setLabels(updatePost.getLabels());
+                        existingPost.setPostStatus(updatePost.getPostStatus());
 
-        for(Post existingPost : currentPosts){
-            if(existingPost.getId().equals(updatePost.getId())){
-                existingPost.setContent(updatePost.getContent());
-                existingPost.setUpdated(updatePost.getUpdated());
-                existingPost.setLabels(updatePost.getLabels());
-                existingPost.setPostStatus(updatePost.getPostStatus());
+                        for(Label label : updatePost.getLabels()){
+                            labelRepository.update(label);
+                            labelRepository.save(label);
+                        }
+                    }
+                    return existingPost;
+                }).toList();
 
-                for(Label label : updatePost.getLabels()){
-                    labelRepository.update(label);
-                    labelRepository.save(label);
-                }
-            }
-            updatePosts.add(existingPost);
-        }
         savePosts(updatePosts);
-
         return updatePost;
-
     }
 
     @Override

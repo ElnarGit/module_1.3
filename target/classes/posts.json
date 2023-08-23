@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "content": "Java",
+    "created": "Aug 23, 2023, 2:15:04 PM",
+    "updated": "Aug 23, 2023, 2:15:04 PM",
+    "labels": [],
+    "postStatus": "ACTIVE"
+  },
+  {
+    "id": 2,
+    "content": "Python",
+    "created": "Aug 23, 2023, 2:15:13 PM",
+    "updated": "Aug 23, 2023, 2:15:13 PM",
+    "labels": [],
+    "postStatus": "ACTIVE"
+  }
+]

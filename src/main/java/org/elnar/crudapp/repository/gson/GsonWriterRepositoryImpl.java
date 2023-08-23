@@ -84,27 +84,23 @@ public class GsonWriterRepositoryImpl implements WriterRepository {
     @Override
     public Writer update(Writer updateWriter) {
         List<Writer> currentWriters = loadWriters();
-        List<Writer> updatedWriters = new ArrayList<>();
+        List<Writer> updatedWriters = currentWriters.stream()
+                .map(existingWriter -> {
+                    if (existingWriter.getId().equals(updateWriter.getId())) {
+                        existingWriter.setFirstname(updateWriter.getFirstname());
+                        existingWriter.setLastName(updateWriter.getLastName());
+                        existingWriter.setPosts(updateWriter.getPosts());
+                        existingWriter.setWriterStatus(updateWriter.getWriterStatus());
 
-        for (Writer existingWriter : currentWriters) {
-            if (existingWriter.getId().equals(updateWriter.getId())) {
-                existingWriter.setFirstname(updateWriter.getFirstname());
-                existingWriter.setLastName(updateWriter.getLastName());
-                existingWriter.setPosts(updateWriter.getPosts());
-                existingWriter.setWriterStatus(updateWriter.getWriterStatus());
-
-                for (Post post : updateWriter.getPosts()) {
-                    postRepository.update(post);
-                    postRepository.save(post);
-                }
-            }
-            updatedWriters.add(existingWriter);
-        }
-
-
+                        for (Post post : updateWriter.getPosts()) {
+                            postRepository.update(post);
+                            postRepository.save(post);
+                        }
+                    }
+                    return existingWriter;
+                }).toList();
 
         saveWriters(updatedWriters);
-
         return updateWriter;
     }
 
