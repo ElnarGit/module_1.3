@@ -13,7 +13,36 @@ import org.elnar.crudapp.view.LabelView;
 import org.elnar.crudapp.view.PostView;
 import org.elnar.crudapp.view.WriterView;
 
+import java.util.Scanner;
+
 public class ApplicationContext {
+     Scanner scanner = new Scanner(System.in);
+
+
+    public void start(){
+        System.out.println("Select an option:");
+        System.out.println("1. Writer");
+        System.out.println("2. Post");
+        System.out.println("3. Label");
+
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (choice) {
+            case 1:
+                writerRun();
+                break;
+            case 2:
+                postRun();
+                break;
+            case 3:
+                labelRun();
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
+    }
+
     public void writerRun(){
         WriterRepository writerRepository = new GsonWriterRepositoryImpl();
         WriterController writerController = new WriterController(writerRepository);

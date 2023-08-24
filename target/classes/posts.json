@@ -4,7 +4,13 @@
     "content": "Java",
     "created": "Aug 23, 2023, 2:15:04 PM",
     "updated": "Aug 23, 2023, 2:15:04 PM",
-    "labels": [],
+    "labels": [
+      {
+        "id": 1,
+        "name": "Koka",
+        "labelStatus": "ACTIVE"
+      }
+    ],
     "postStatus": "ACTIVE"
   },
   {
@@ -13,6 +19,20 @@
     "created": "Aug 23, 2023, 2:15:13 PM",
     "updated": "Aug 23, 2023, 2:15:13 PM",
     "labels": [],
+    "postStatus": "ACTIVE"
+  },
+  {
+    "id": 3,
+    "content": "C++",
+    "created": "Aug 23, 2023, 2:19:25 PM",
+    "updated": "Aug 23, 2023, 2:19:25 PM",
+    "labels": [
+      {
+        "id": 2,
+        "name": "GGG",
+        "labelStatus": "ACTIVE"
+      }
+    ],
     "postStatus": "ACTIVE"
   }
 ]

@@ -17,13 +17,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class GsonLabelRepositoryImpl implements LabelRepository {
-    private static final String FILE_PATH = "src/main/resources/labels.json";
+    private final String FILE_PATH = "src/main/resources/labels.json";
     private final Gson gson = new Gson();
 
 
-    public GsonLabelRepositoryImpl(){
-        loadLabels();
-    }
+
 
     private List<Label> loadLabels(){
         try(Reader reader = new FileReader(FILE_PATH)){
