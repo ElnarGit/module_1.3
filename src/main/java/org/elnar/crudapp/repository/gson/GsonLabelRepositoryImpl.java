@@ -20,9 +20,6 @@ public class GsonLabelRepositoryImpl implements LabelRepository {
     private final String FILE_PATH = "src/main/resources/labels.json";
     private final Gson gson = new Gson();
 
-
-
-
     private List<Label> loadLabels(){
         try(Reader reader = new FileReader(FILE_PATH)){
             Type type = new TypeToken<List<Label>>(){}.getType();

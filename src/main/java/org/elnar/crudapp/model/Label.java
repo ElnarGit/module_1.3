@@ -1,7 +1,9 @@
 package org.elnar.crudapp.model;
 
-import lombok.*;
-import lombok.experimental.Accessors;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.elnar.crudapp.enums.LabelStatus;
 
 

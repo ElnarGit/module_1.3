@@ -19,13 +19,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class GsonPostRepositoryImpl implements PostRepository {
-    private static final String FILE_PATH = "src/main/resources/posts.json";
+    private final String FILE_PATH = "src/main/resources/posts.json";
     private final Gson gson = new Gson();
     private final LabelRepository labelRepository = new GsonLabelRepositoryImpl();
-
-    public GsonPostRepositoryImpl() {
-        loadPosts();
-    }
 
     private List<Post> loadPosts() {
         try (Reader reader = new FileReader(FILE_PATH)) {

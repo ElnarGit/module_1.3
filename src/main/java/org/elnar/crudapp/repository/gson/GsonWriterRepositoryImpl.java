@@ -20,13 +20,9 @@ import java.util.List;
 
 
 public class GsonWriterRepositoryImpl implements WriterRepository {
-    private static final  String FILE_PATH = "src/main/resources/writers.json";
+    private final  String FILE_PATH = "src/main/resources/writers.json";
     private final Gson gson = new Gson();
     private final PostRepository postRepository = new GsonPostRepositoryImpl();
-
-    public GsonWriterRepositoryImpl(){
-        loadWriters();
-    }
 
     //предназначен для загрузки данных о писателях из файла
     // и преобразования этих данных в объекты типа List<Writer>
